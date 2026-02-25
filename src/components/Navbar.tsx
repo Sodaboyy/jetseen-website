@@ -26,7 +26,7 @@ export default function Navbar() {
             : "border-slate-200/60 bg-white/60 backdrop-blur-md"
         }`}
       >
-        <div className="flex h-14 items-center justify-between px-5">
+        <div className="flex h-20 items-center justify-between px-6">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -34,7 +34,7 @@ export default function Navbar() {
               alt="Jetseen"
               width={200}
               height={161}
-              className="h-9 w-auto"
+              className="h-[72px] w-auto"
               priority
             />
           </Link>
