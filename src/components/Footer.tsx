@@ -13,7 +13,7 @@ export default function Footer() {
               alt="Jetseen"
               width={200}
               height={161}
-              className="h-16 w-auto brightness-0 invert"
+              className="h-8 w-auto brightness-0 invert"
             />
             <p className="mt-3 text-sm leading-relaxed text-slate-400">
               Residency day tracking
