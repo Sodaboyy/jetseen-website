@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -27,15 +28,15 @@ export default function Navbar() {
       >
         <div className="flex h-14 items-center justify-between px-5">
           {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-1.5 text-base font-extrabold tracking-tight text-primary"
-          >
-            <svg className="h-5 w-5" viewBox="0 0 20 20" fill="none">
-              <rect width="20" height="20" rx="4" fill="#111827" />
-              <path d="M5 10l3.5 3.5L15 7" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-            Jetseen
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/jetseen-logo.png"
+              alt="Jetseen"
+              width={200}
+              height={161}
+              className="h-7 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Links + Auth */}
