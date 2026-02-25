@@ -34,7 +34,7 @@ export default function Navbar() {
               alt="Jetseen"
               width={200}
               height={161}
-              className="h-7 w-auto"
+              className="h-9 w-auto"
               priority
             />
           </Link>
