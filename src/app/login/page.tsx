@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 type Tab = "signup" | "login";
 
@@ -13,11 +14,14 @@ export default function LoginPage() {
     <div className="flex min-h-screen">
       {/* ═══════ LEFT PANEL ═══════ */}
       <div className="hidden w-[40%] flex-col justify-between bg-primary p-12 lg:flex">
-        <Link
-          href="/"
-          className="text-xl font-extrabold tracking-tight text-white"
-        >
-          Jetseen
+        <Link href="/" className="inline-block">
+          <Image
+            src="/jetseen-logo.png"
+            alt="Jetseen"
+            width={200}
+            height={161}
+            className="h-7 w-auto brightness-0 invert"
+          />
         </Link>
 
         <div>
@@ -61,11 +65,14 @@ export default function LoginPage() {
       {/* ═══════ RIGHT PANEL ═══════ */}
       <div className="flex flex-1 flex-col items-center justify-center bg-white px-6 py-12">
         {/* Mobile logo */}
-        <Link
-          href="/"
-          className="mb-8 text-xl font-extrabold tracking-tight text-primary lg:hidden"
-        >
-          Jetseen
+        <Link href="/" className="mb-8 inline-block lg:hidden">
+          <Image
+            src="/jetseen-logo.png"
+            alt="Jetseen"
+            width={200}
+            height={161}
+            className="h-7 w-auto"
+          />
         </Link>
 
         <div className="w-full max-w-md">

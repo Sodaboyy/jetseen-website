@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,7 +8,13 @@ export default function Footer() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <span className="text-lg font-extrabold tracking-tight">Jetseen</span>
+            <Image
+              src="/jetseen-logo.png"
+              alt="Jetseen"
+              width={200}
+              height={161}
+              className="h-6 w-auto brightness-0 invert"
+            />
             <p className="mt-3 text-sm leading-relaxed text-slate-400">
               Residency day tracking
               <br />
