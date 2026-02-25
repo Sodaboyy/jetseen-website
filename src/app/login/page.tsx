@@ -20,7 +20,7 @@ export default function LoginPage() {
             alt="Jetseen"
             width={200}
             height={161}
-            className="h-9 w-auto brightness-0 invert"
+            className="h-6 w-auto brightness-0 invert"
           />
         </Link>
 
@@ -71,7 +71,7 @@ export default function LoginPage() {
             alt="Jetseen"
             width={200}
             height={161}
-            className="h-9 w-auto"
+            className="h-6 w-auto"
           />
         </Link>
 
