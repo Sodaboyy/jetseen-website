@@ -9,6 +9,7 @@ import CountUp from "@/components/CountUp";
 import DashboardMockup from "@/components/DashboardMockup";
 import NotificationCard from "@/components/NotificationCard";
 import FeatureCard from "@/components/FeatureCard";
+import FlagCarousel from "@/components/FlagCarousel";
 
 /* ─────────── Icons ─────────── */
 const GlobeIcon = (
@@ -32,60 +33,113 @@ export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main className="pt-16">
-        {/* ═══════ HERO ═══════ */}
-        <section className="relative overflow-hidden">
-          <div className="mx-auto max-w-7xl px-6 pb-8 pt-20 md:pt-28 lg:px-8">
-            <div className="mx-auto max-w-3xl text-center">
-              <motion.h1
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-                className="font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-primary md:text-5xl lg:text-6xl"
-              >
-                Know exactly where you stand. In every country. Every day.
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-                className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-text-secondary md:text-xl"
-              >
-                Jetseen tracks your days across borders so you never accidentally
-                trigger tax residency, overstay a visa, or fail an audit. No GPS.
-                No guesswork. Just clarity.
-              </motion.p>
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-              >
-                <Link
-                  href="/login"
-                  className="w-full rounded-lg bg-accent px-8 py-4 text-center text-base font-semibold text-white shadow-sm transition-all hover:bg-accent-hover hover:shadow-md sm:w-auto"
-                >
-                  Start tracking free
-                </Link>
-                <a
-                  href="#problem"
-                  className="w-full rounded-lg border border-slate-300 px-8 py-4 text-center text-base font-medium text-slate-700 transition-colors hover:border-slate-400 hover:bg-slate-50 sm:w-auto"
-                >
-                  See how it works
-                </a>
-              </motion.div>
-            </div>
+      <main>
+        {/* ═══════ HERO — Mobbin style ═══════ */}
+        <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6">
+          <div className="mx-auto w-full max-w-4xl pt-28 text-center">
+            {/* Rotating flag icon */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <FlagCarousel />
+            </motion.div>
 
-            <DashboardMockup />
+            {/* Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+              className="font-display text-[2.75rem] font-extrabold leading-[1.08] tracking-[-0.02em] text-primary md:text-[3.5rem] lg:text-[4.25rem]"
+            >
+              Know exactly where
+              <br />
+              you stand. In every
+              <br />
+              country. Every day.
+            </motion.h1>
+
+            {/* Subheadline */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25, ease: [0.25, 0.1, 0.25, 1] }}
+              className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-text-secondary md:text-lg"
+            >
+              Jetseen tracks your days across borders so you never accidentally
+              trigger tax residency, overstay a visa, or fail an audit.
+              <br className="hidden md:block" />
+              No GPS. No guesswork. Just clarity.
+            </motion.p>
+
+            {/* CTA buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"
+            >
+              <Link
+                href="/login"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-7 text-sm font-semibold text-white transition-all hover:bg-primary/90 hover:shadow-lg"
+              >
+                Start tracking free
+              </Link>
+              <a
+                href="#how-it-works"
+                className="group inline-flex h-12 items-center justify-center gap-1.5 rounded-full border border-slate-200 bg-white px-7 text-sm font-semibold text-primary transition-all hover:border-slate-300 hover:shadow-sm"
+              >
+                See how it works
+                <svg
+                  className="h-4 w-4 transition-transform group-hover:translate-x-0.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </motion.div>
           </div>
 
-          {/* Gradient BG */}
-          <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-blue-50/60 via-white to-white" />
+          {/* Trusted by strip — at bottom of hero viewport */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="mt-auto w-full pb-12 pt-20"
+          >
+            <p className="mb-6 text-center text-xs font-medium tracking-wider text-text-secondary/60 uppercase">
+              Trusted by digital nomads tracking days in
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-semibold text-slate-300 md:gap-x-12">
+              {[
+                "Schengen Zone",
+                "United States",
+                "United Kingdom",
+                "UAE",
+                "Portugal",
+                "Thailand",
+                "Canada",
+                "Australia",
+              ].map((name) => (
+                <span key={name} className="whitespace-nowrap">{name}</span>
+              ))}
+            </div>
+          </motion.div>
+        </section>
+
+        {/* ═══════ PRODUCT SHOWCASE ═══════ */}
+        <section className="bg-surface px-6 py-16 md:py-24">
+          <div className="mx-auto max-w-7xl">
+            <DashboardMockup />
+          </div>
         </section>
 
         {/* ═══════ STATS BAR ═══════ */}
-        <section className="border-y border-border bg-primary">
-          <div className="mx-auto max-w-5xl px-6 py-12 lg:px-8">
+        <section className="border-y border-slate-200 bg-primary">
+          <div className="mx-auto max-w-5xl px-6 py-14 lg:px-8">
             <div className="grid grid-cols-1 gap-10 text-center md:grid-cols-3">
               {[
                 { value: "183", label: "The day count that changes everything" },
@@ -96,7 +150,7 @@ export default function HomePage() {
                   <div className="text-3xl font-extrabold text-white md:text-4xl">
                     <CountUp value={stat.value} />
                     {stat.suffix && (
-                      <span className="text-slate-400">{stat.suffix}</span>
+                      <span className="text-slate-500">{stat.suffix}</span>
                     )}
                   </div>
                   <p className="mt-2 text-sm text-slate-400">{stat.label}</p>
@@ -110,14 +164,14 @@ export default function HomePage() {
         <section id="problem" className="py-24 md:py-32">
           <div className="mx-auto max-w-3xl px-6 lg:px-8">
             <AnimatedSection>
-              <h2 className="font-display text-3xl font-extrabold tracking-tight text-primary md:text-4xl">
+              <h2 className="font-display text-3xl font-extrabold tracking-tight text-primary md:text-4xl lg:text-[2.75rem]">
                 Tracking days across borders shouldn&apos;t feel like defusing a
                 bomb.
               </h2>
             </AnimatedSection>
             <div className="mt-10 space-y-6">
               <AnimatedSection delay={0.1}>
-                <p className="text-base leading-relaxed text-text-secondary md:text-lg">
+                <p className="text-base leading-[1.75] text-text-secondary md:text-lg">
                   You&apos;re building a life across countries. But every destination
                   comes with a countdown you can&apos;t afford to lose track of. Tax
                   residency thresholds. Visa limits. Rolling windows that reset one
@@ -127,13 +181,13 @@ export default function HomePage() {
                 </p>
               </AnimatedSection>
               <AnimatedSection delay={0.2}>
-                <p className="text-base leading-relaxed text-text-secondary md:text-lg">
+                <p className="text-base leading-[1.75] text-text-secondary md:text-lg">
                   So you built a spreadsheet. And now you&apos;re too scared to touch it
                   in case you break a formula.
                 </p>
               </AnimatedSection>
               <AnimatedSection delay={0.3}>
-                <p className="text-base leading-relaxed text-text-secondary md:text-lg">
+                <p className="text-base leading-[1.75] text-text-secondary md:text-lg">
                   Or you tried an auto-tracking app. And discovered it logged 18 days
                   over 8 months.
                 </p>
@@ -148,16 +202,16 @@ export default function HomePage() {
         </section>
 
         {/* ═══════ SOLUTION CARDS ═══════ */}
-        <section className="bg-surface py-24 md:py-32">
+        <section id="how-it-works" className="bg-surface py-24 md:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <AnimatedSection className="mx-auto mb-16 max-w-3xl text-center">
-              <h2 className="font-display text-3xl font-extrabold tracking-tight text-primary md:text-4xl">
+              <h2 className="font-display text-3xl font-extrabold tracking-tight text-primary md:text-4xl lg:text-[2.75rem]">
                 Jetseen gives you something no spreadsheet or GPS tracker can:
                 confidence.
               </h2>
             </AnimatedSection>
 
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
               <FeatureCard
                 index={0}
                 icon={GlobeIcon}
@@ -186,13 +240,13 @@ export default function HomePage() {
             <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-2">
               <div>
                 <AnimatedSection>
-                  <h2 className="font-display text-3xl font-extrabold tracking-tight text-primary md:text-4xl">
+                  <h2 className="font-display text-3xl font-extrabold tracking-tight text-primary md:text-4xl lg:text-[2.75rem]">
                     Other apps tell you there&apos;s a problem. Jetseen tells you how
                     to fix it.
                   </h2>
                 </AnimatedSection>
                 <AnimatedSection delay={0.1}>
-                  <p className="mt-6 text-base leading-relaxed text-text-secondary md:text-lg">
+                  <p className="mt-6 text-base leading-[1.75] text-text-secondary md:text-lg">
                     Planning a trip that would push you over a threshold? Jetseen
                     won&apos;t just flash a red warning. It will tell you:
                   </p>
@@ -233,14 +287,14 @@ export default function HomePage() {
               <AnimatedSection className="order-2 lg:order-1">
                 <div className="flex items-center justify-center gap-8">
                   {/* PDF mock */}
-                  <div className="flex h-48 w-36 flex-col rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
-                    <div className="mb-3 flex items-center gap-2">
-                      <div className="flex h-8 w-8 items-center justify-center rounded bg-red-100 text-xs font-bold text-red-600">
+                  <div className="flex h-52 w-40 flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                    <div className="mb-4 flex items-center gap-2.5">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-red-50 text-xs font-bold text-red-500">
                         PDF
                       </div>
-                      <div className="space-y-1">
-                        <div className="h-2 w-14 rounded bg-slate-200" />
-                        <div className="h-1.5 w-10 rounded bg-slate-100" />
+                      <div className="space-y-1.5">
+                        <div className="h-2 w-16 rounded bg-slate-200" />
+                        <div className="h-1.5 w-11 rounded bg-slate-100" />
                       </div>
                     </div>
                     <div className="flex-1 space-y-2">
@@ -253,17 +307,17 @@ export default function HomePage() {
                     </div>
                   </div>
                   {/* CSV mock */}
-                  <div className="flex h-48 w-36 flex-col rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
-                    <div className="mb-3 flex items-center gap-2">
-                      <div className="flex h-8 w-8 items-center justify-center rounded bg-emerald-100 text-xs font-bold text-emerald-600">
+                  <div className="flex h-52 w-40 flex-col rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+                    <div className="mb-4 flex items-center gap-2.5">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-emerald-50 text-xs font-bold text-emerald-500">
                         CSV
                       </div>
-                      <div className="space-y-1">
-                        <div className="h-2 w-14 rounded bg-slate-200" />
-                        <div className="h-1.5 w-10 rounded bg-slate-100" />
+                      <div className="space-y-1.5">
+                        <div className="h-2 w-16 rounded bg-slate-200" />
+                        <div className="h-1.5 w-11 rounded bg-slate-100" />
                       </div>
                     </div>
-                    <div className="flex-1 space-y-1.5">
+                    <div className="flex-1 space-y-2">
                       {Array.from({ length: 7 }).map((_, i) => (
                         <div key={i} className="flex gap-1">
                           <div className="h-1.5 w-1/3 rounded bg-slate-200" />
@@ -278,10 +332,10 @@ export default function HomePage() {
 
               {/* Copy */}
               <AnimatedSection className="order-1 lg:order-2">
-                <h2 className="font-display text-3xl font-extrabold tracking-tight text-primary md:text-4xl">
+                <h2 className="font-display text-3xl font-extrabold tracking-tight text-primary md:text-4xl lg:text-[2.75rem]">
                   Built for the people who actually check your numbers.
                 </h2>
-                <p className="mt-6 text-base leading-relaxed text-text-secondary md:text-lg">
+                <p className="mt-6 text-base leading-[1.75] text-text-secondary md:text-lg">
                   Your travel data exists to satisfy immigration officers, tax
                   authorities, and advisors — not just you. Jetseen exports
                   audit-ready PDFs that look professional at passport control, and
@@ -298,31 +352,33 @@ export default function HomePage() {
         <section className="py-24 md:py-32">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <AnimatedSection className="mx-auto mb-16 max-w-2xl text-center">
-              <h2 className="font-display text-3xl font-extrabold tracking-tight text-primary md:text-4xl">
-                One plan. Everything included. No surprises.
+              <h2 className="font-display text-3xl font-extrabold tracking-tight text-primary md:text-4xl lg:text-[2.75rem]">
+                One plan. Everything included.
+                <br />
+                No surprises.
               </h2>
-              <p className="mt-4 text-lg text-text-secondary">
+              <p className="mt-4 text-base text-text-secondary md:text-lg">
                 Other apps lock core features behind confusing tier upgrades. Jetseen
                 doesn&apos;t.
               </p>
             </AnimatedSection>
 
-            <AnimatedSection delay={0.15} className="mx-auto max-w-lg">
+            <AnimatedSection delay={0.15} className="mx-auto max-w-md">
               <div className="rounded-2xl border border-slate-200 bg-white p-10 shadow-xl">
                 <div className="text-center">
-                  <h3 className="font-display text-2xl font-extrabold text-primary">
+                  <h3 className="font-display text-xl font-bold text-primary">
                     Jetseen
                   </h3>
-                  <div className="mt-4">
-                    <span className="font-display text-5xl font-extrabold text-primary">
+                  <div className="mt-5">
+                    <span className="font-display text-5xl font-extrabold tracking-tight text-primary">
                       $55
                     </span>
-                    <span className="text-lg text-text-secondary">/year</span>
+                    <span className="text-base text-text-secondary">/year</span>
                   </div>
                   <p className="mt-1 text-sm text-text-secondary">$4.58/mo</p>
                 </div>
 
-                <ul className="mt-8 space-y-4">
+                <ul className="mt-8 space-y-3.5">
                   {[
                     "Full day tracking across unlimited countries and states",
                     "Visual compliance calendar",
@@ -334,17 +390,12 @@ export default function HomePage() {
                   ].map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
                       <svg
-                        className="mt-0.5 h-5 w-5 shrink-0 text-accent"
+                        className="mt-0.5 h-5 w-5 shrink-0 text-success"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>
                       <span className="text-sm leading-relaxed text-text-secondary">
                         {feature}
@@ -355,7 +406,7 @@ export default function HomePage() {
 
                 <Link
                   href="/login"
-                  className="mt-8 block w-full rounded-lg bg-accent px-8 py-4 text-center text-base font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-md"
+                  className="mt-8 flex h-12 w-full items-center justify-center rounded-full bg-primary text-sm font-semibold text-white transition-all hover:bg-primary/90 hover:shadow-lg"
                 >
                   Start tracking free
                 </Link>
@@ -373,16 +424,18 @@ export default function HomePage() {
         <section className="bg-primary py-24 md:py-32">
           <div className="mx-auto max-w-3xl px-6 text-center lg:px-8">
             <AnimatedSection>
-              <h2 className="font-display text-3xl font-extrabold tracking-tight text-white md:text-4xl">
-                Stop counting days in your head. Start knowing.
+              <h2 className="font-display text-3xl font-extrabold tracking-tight text-white md:text-4xl lg:text-[2.75rem]">
+                Stop counting days in your head.
+                <br />
+                Start knowing.
               </h2>
-              <p className="mx-auto mt-6 max-w-xl text-lg text-slate-400">
+              <p className="mx-auto mt-6 max-w-xl text-base text-slate-400 md:text-lg">
                 Jetseen gives you the one thing spreadsheets and GPS trackers never
                 could: peace of mind.
               </p>
               <Link
                 href="/login"
-                className="mt-10 inline-block rounded-lg bg-accent px-10 py-4 text-base font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-lg"
+                className="mt-10 inline-flex h-12 items-center justify-center rounded-full bg-accent px-8 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-lg"
               >
                 Start tracking free
               </Link>

@@ -39,7 +39,7 @@ export default function DashboardMockup() {
       initial={{ opacity: 0, y: 40, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-      className="relative mx-auto mt-16 w-full max-w-4xl"
+      className="relative mx-auto w-full max-w-4xl"
     >
       {/* Browser frame */}
       <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-2xl">

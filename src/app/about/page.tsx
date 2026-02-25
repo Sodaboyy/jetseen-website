@@ -29,9 +29,9 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-16">
+      <main>
         {/* ═══════ HERO ═══════ */}
-        <section className="relative overflow-hidden py-24 md:py-32">
+        <section className="relative overflow-hidden pb-20 pt-32 md:pb-24 md:pt-40">
           <div className="mx-auto max-w-3xl px-6 lg:px-8">
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
@@ -111,7 +111,7 @@ export default function AboutPage() {
               </h2>
               <Link
                 href="/login"
-                className="mt-10 inline-block rounded-lg bg-accent px-10 py-4 text-base font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-lg"
+                className="mt-10 inline-flex h-12 items-center justify-center rounded-full bg-accent px-8 text-sm font-semibold text-white transition-all hover:bg-accent-hover hover:shadow-lg"
               >
                 Start tracking free
               </Link>
