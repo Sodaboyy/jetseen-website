@@ -274,7 +274,7 @@ function FlagIcon({ flag }: { flag: FlagItem }) {
         alt={flag.alt}
         width={flag.size}
         height={flag.size}
-        className="pointer-events-none h-full w-full select-none rounded-[22%] object-cover drop-shadow-lg"
+        className="pointer-events-none h-full w-full select-none rounded-lg object-contain drop-shadow-lg"
         draggable={false}
       />
     </motion.div>

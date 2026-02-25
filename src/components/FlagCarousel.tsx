@@ -76,13 +76,13 @@ export default function FlagCarousel() {
                 ease: [0.25, 0.1, 0.25, 1],
               }}
             >
-              <div className="h-full w-full overflow-hidden rounded-[18px] bg-white shadow-md md:rounded-[22px]">
+              <div className="flex h-full w-full items-center justify-center rounded-[18px] bg-white p-2.5 shadow-md md:rounded-[22px]">
                 <Image
                   src={flag.src}
                   alt={flag.alt}
                   width={88}
                   height={88}
-                  className="h-full w-full object-cover"
+                  className="h-auto w-full rounded-[6px] object-contain"
                   priority={i === 0}
                 />
               </div>
@@ -103,13 +103,13 @@ export default function FlagCarousel() {
             transition: { duration: 0.45, ease: [0.25, 0.1, 0.25, 1] },
           }}
         >
-          <div className="h-full w-full overflow-hidden rounded-[18px] bg-white shadow-md md:rounded-[22px]">
+          <div className="flex h-full w-full items-center justify-center rounded-[18px] bg-white p-2.5 shadow-md md:rounded-[22px]">
             <Image
               src={flags[currentIndex].src}
               alt={flags[currentIndex].alt}
               width={88}
               height={88}
-              className="h-full w-full object-cover"
+              className="h-auto w-full rounded-[6px] object-contain"
               priority
             />
           </div>
