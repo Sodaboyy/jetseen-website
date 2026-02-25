@@ -31,7 +31,7 @@ const flags: FlagItem[] = [
   // ── TOP AREA ──
   {
     code: "US",
-    src: "/flags/app/us.png",
+    src: "/flags/clean/us.png",
     alt: "United States",
     size: 90,
     x: 78,
@@ -45,7 +45,7 @@ const flags: FlagItem[] = [
   },
   {
     code: "ES",
-    src: "/flags/app/es.png",
+    src: "/flags/clean/es.png",
     alt: "Spain",
     size: 85,
     x: 6,
@@ -59,7 +59,7 @@ const flags: FlagItem[] = [
   },
   {
     code: "GB",
-    src: "/flags/app/gb.png",
+    src: "/flags/clean/gb.png",
     alt: "United Kingdom",
     size: 70,
     x: 25,
@@ -73,7 +73,7 @@ const flags: FlagItem[] = [
   },
   {
     code: "CA",
-    src: "/flags/app/ca.png",
+    src: "/flags/clean/ca.png",
     alt: "Canada",
     size: 70,
     x: 62,
@@ -89,7 +89,7 @@ const flags: FlagItem[] = [
   // ── LEFT SIDE ──
   {
     code: "FR",
-    src: "/flags/app/fr.png",
+    src: "/flags/clean/fr.png",
     alt: "France",
     size: 55,
     x: 3,
@@ -103,7 +103,7 @@ const flags: FlagItem[] = [
   },
   {
     code: "PT",
-    src: "/flags/app/pt.png",
+    src: "/flags/clean/pt.png",
     alt: "Portugal",
     size: 50,
     x: 8,
@@ -117,7 +117,7 @@ const flags: FlagItem[] = [
   },
   {
     code: "MX",
-    src: "/flags/app/mx.png",
+    src: "/flags/clean/mx.png",
     alt: "Mexico",
     size: 65,
     x: 4,
@@ -133,7 +133,7 @@ const flags: FlagItem[] = [
   // ── RIGHT SIDE ──
   {
     code: "DE",
-    src: "/flags/app/de.png",
+    src: "/flags/clean/de.png",
     alt: "Germany",
     size: 55,
     x: 90,
@@ -147,7 +147,7 @@ const flags: FlagItem[] = [
   },
   {
     code: "AE",
-    src: "/flags/app/ae.png",
+    src: "/flags/clean/ae.png",
     alt: "UAE",
     size: 80,
     x: 88,
@@ -163,7 +163,7 @@ const flags: FlagItem[] = [
   // ── BOTTOM AREA ──
   {
     code: "TH",
-    src: "/flags/app/th.png",
+    src: "/flags/clean/th.png",
     alt: "Thailand",
     size: 65,
     x: 14,
@@ -177,7 +177,7 @@ const flags: FlagItem[] = [
   },
   {
     code: "SG",
-    src: "/flags/app/sg.png",
+    src: "/flags/clean/sg.png",
     alt: "Singapore",
     size: 50,
     x: 30,
@@ -191,7 +191,7 @@ const flags: FlagItem[] = [
   },
   {
     code: "JP",
-    src: "/flags/app/jp.png",
+    src: "/flags/clean/jp.png",
     alt: "Japan",
     size: 70,
     x: 84,
@@ -205,7 +205,7 @@ const flags: FlagItem[] = [
   },
   {
     code: "AU",
-    src: "/flags/app/au.png",
+    src: "/flags/clean/au.png",
     alt: "Australia",
     size: 85,
     x: 60,
@@ -219,7 +219,7 @@ const flags: FlagItem[] = [
   },
   {
     code: "ID",
-    src: "/flags/app/id.png",
+    src: "/flags/clean/id.png",
     alt: "Indonesia",
     size: 60,
     x: 20,
@@ -274,7 +274,7 @@ function FlagIcon({ flag }: { flag: FlagItem }) {
         alt={flag.alt}
         width={flag.size}
         height={flag.size}
-        className="pointer-events-none h-full w-full select-none object-contain drop-shadow-lg"
+        className="pointer-events-none h-full w-full select-none rounded-[22%] object-cover drop-shadow-lg"
         draggable={false}
       />
     </motion.div>
