@@ -10,6 +10,7 @@ import DashboardMockup from "@/components/DashboardMockup";
 import NotificationCard from "@/components/NotificationCard";
 import FeatureCard from "@/components/FeatureCard";
 import FlagCarousel from "@/components/FlagCarousel";
+import FloatingFlags from "@/components/FloatingFlags";
 
 /* ─────────── Icons ─────────── */
 const GlobeIcon = (
@@ -136,6 +137,9 @@ export default function HomePage() {
             <DashboardMockup />
           </div>
         </section>
+
+        {/* ═══════ FLOATING FLAGS + STATS ═══════ */}
+        <FloatingFlags />
 
         {/* ═══════ STATS BAR ═══════ */}
         <section className="border-y border-slate-200 bg-primary">
