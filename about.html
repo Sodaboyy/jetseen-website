@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Jetseen</title>
+  <meta name="description" content="Learn about Jetseen and our mission to help digital nomads stay travel-compliant.">
+  <link rel="icon" href="/default-favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .fade-in { animation: fadeIn 0.6s ease-out; }
+    .fade-in-delay { animation: fadeIn 0.6s ease-out 0.2s both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body class="bg-white min-h-screen">
+
+  <div id="navbar"></div>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-16 md:pt-28 md:pb-20">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight fade-in">
+          About Jetseen
+        </h1>
+        <p class="mt-6 text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed fade-in-delay">
+          We're building the tools digital nomads need to travel the world without the compliance headaches.
+        </p>
+      </div>
+    </div>
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50/50 to-white"></div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8">
+      <div class="space-y-12">
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">Our Mission</h2>
+          <p class="text-slate-600 leading-relaxed text-base">
+            For digital nomads, remote workers, and frequent travellers, keeping track of visa overstay rules and tax residency thresholds across multiple countries is a nightmare. One miscounted day can lead to fines, deportation, or unexpected tax liabilities.
+          </p>
+          <p class="text-slate-600 leading-relaxed text-base mt-4">
+            Jetseen was built to solve this. We give you a clear, real-time dashboard that tracks your travel days against every rule that matters to you — so you can focus on living your life, not counting days on spreadsheets.
+          </p>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">What We Believe</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="font-semibold text-slate-900 mb-2">Privacy First</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Your travel data is sensitive. It stays on your device, under your control. We don't store, track, or sell your information.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="font-semibold text-slate-900 mb-2">Simplicity</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Complex rules shouldn't mean a complex interface. We distil complicated visa and tax logic into clear, actionable status indicators.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="font-semibold text-slate-900 mb-2">Accuracy</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Our calculation engine is built to handle the nuances — rolling windows, weighted averages, tie-breaker tests, and country-specific tax years.</p>
+            </div>
+            <div class="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <h3 class="font-semibold text-slate-900 mb-2">Accessibility</h3>
+              <p class="text-slate-500 text-sm leading-relaxed">Travel compliance tools shouldn't cost a fortune. Jetseen is free to use and built for everyone, from first-time nomads to seasoned globetrotters.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-slate-900 mb-4">Built for Nomads, by Nomads</h2>
+          <p class="text-slate-600 leading-relaxed text-base">
+            Jetseen was born out of personal frustration. After one too many late-night spreadsheet sessions trying to figure out Schengen day counts and UK statutory residence tests, we decided to build the tool we wished existed.
+          </p>
+          <p class="text-slate-600 leading-relaxed text-base mt-4">
+            Today, Jetseen supports 15+ country-specific rules including the Schengen 90/180 rule, US Substantial Presence Test, UK SRT, and many more — with new rules being added regularly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-20">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="bg-slate-900 rounded-2xl px-8 py-14 md:px-16 md:py-16 text-center">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Start tracking your compliance today</h2>
+        <p class="text-slate-400 text-base mb-8 max-w-lg mx-auto">It takes less than a minute to set up. No credit card required.</p>
+        <a href="signup.html" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-lg text-base transition-colors duration-200">
+          Get Started Free
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+
+  <script src="components.js"></script>
+</body>
+</html>
