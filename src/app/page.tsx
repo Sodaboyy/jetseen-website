@@ -375,11 +375,11 @@ export default function HomePage() {
                   </h3>
                   <div className="mt-5">
                     <span className="font-display text-5xl font-extrabold tracking-tight text-primary">
-                      $55
+                      $59.99
                     </span>
                     <span className="text-base text-text-secondary">/year</span>
                   </div>
-                  <p className="mt-1 text-sm text-text-secondary">$4.58/mo</p>
+                  <p className="mt-1 text-sm text-text-secondary">$4.96/mo</p>
                 </div>
 
                 <ul className="mt-8 space-y-3.5">
